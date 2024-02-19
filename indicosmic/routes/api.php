@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('get-data',function(){
+    return "<h1>!!Welocome to Indicosmic.com!!</h1>";
+});
