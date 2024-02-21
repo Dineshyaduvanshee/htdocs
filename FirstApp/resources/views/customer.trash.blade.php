@@ -41,12 +41,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Customer view </title>
+    <title>Customer Trashed </title>
 </head>
 <body>
 
 
-    <div class="container mt-5 ">
+    <div class="container mt-5">
     <table class="table">
         <!-- <pre>
             {{print_r($customer)}}
@@ -57,9 +57,6 @@
                 <a href="{{route('customer.create')}}">
                     <button class="btn btn-primary">create</button>
                 </a>
-                <td>
-                <a href="{{ url('customer/trash') }}"> <button class="btn btn-danger">Go to Trash</button></a>
-                </td>
             </td>
     </tr>
         <tr>

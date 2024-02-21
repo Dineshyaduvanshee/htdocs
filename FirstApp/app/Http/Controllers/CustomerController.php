@@ -103,6 +103,10 @@ class CustomerController extends Controller
         //     return view('customer/view')->with($data);
         //    }
     }
+    public function trash(){
+        $customer = customer::onlyTrashed()->get();
+        return view('customer-trash')->with($customer);
+    }
     public function edit($id){
         $customer = Customer::find($id);
         
