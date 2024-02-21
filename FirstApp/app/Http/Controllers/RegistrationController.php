@@ -8,6 +8,12 @@ class RegistrationController extends Controller
 {
     public function index(){
         return view('form');
+    }   
+    public function login(){
+        return view('login');
+    }
+    public function home(){
+        return view('home');
     }
     public function register(Request $request){
         $request->validate(

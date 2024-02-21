@@ -21,6 +21,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/customer')}}">View</a>
             </li>
+            <!-- <li class="nav-item">
+                
+                <button class="nav-link btn btn-primary" href="{{url('/login')}}">Login</button>
+            </li> -->
+           
+
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -31,54 +37,58 @@
         </ul>
     </div>
 </nav>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
         body {
             background-color: #f8f9fa; /* Set your desired background color */
         }
-        .container {
-            max-width: 600px; /* Set your desired maximum width */
+        .login-container {
+            max-width: 400px; /* Set your desired maximum width */
             margin: auto;
+            margin-top: 100px; /* Adjust the top margin as needed */
             padding: 20px;
             background-color: #fff; /* Set your desired background color */
             border-radius: 8px;
-            margin-top: 50px; /* Adjust the top margin as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
         }
-        h1 {
+        .login-container h2 {
             text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
             margin-bottom: 20px;
         }
     </style>
-    <title>Form Page</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="mb-4">Registration Form</h1>
-        <form action="{{url('/')}}/register" method="post">
-            @csrf
-            @php
-                $demo = 1; 
-            @endphp
-            <x-input type="text" name="name" label=" Name :" placeholder="Please enter your name" :demo="$demo" />
-            <span class="text-danger">@error('name'){{$message}}@enderror</span>
-            <x-input type="email" name="email" placeholder="Please enter your email" label=" Email :"/>
-            <span class="text-danger">@error('email'){{$message}}@enderror</span>
-            <x-input type="password" name="password" placeholder="Please enter your password" label=" Password :"/>
-            <span class="text-danger">@error('password'){{$message}}@enderror</span>
-            <x-input type="password" name="password_confirmation" placeholder="Please enter your confirm password" label=" Comfirm Password : "/> 
-            <span class="text-danger">@error('password_confirmation'){{$message}}@enderror</span>
-            <div>
-                <button class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
+
+<div class="container login-container">
+    <h2>Login</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
