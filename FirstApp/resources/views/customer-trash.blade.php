@@ -113,7 +113,7 @@
         <button class="btn btn-danger">Delete</button>
     </a> -->
     <!--this is url methed-->
-    <a href="{{ url('customer/delete/')}}/{{$cr->id}}">
+    <a href="{{ url('customer/force-delete')}}/{{$cr->id}}">
         <button class="btn btn-danger">Delete</button>
     </a>
 </td>

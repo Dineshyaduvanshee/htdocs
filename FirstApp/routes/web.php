@@ -83,6 +83,7 @@ Route::post('/register', [RegistrationController::class, 'register']);
 Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create'); 
 Route::post('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+Route::get('/customer/force-delete/{id}', [CustomerController::class, 'forceDelete'])->name('customer.force-delete');
 Route::get('/customer/restore/{id}', [CustomerController::class, 'restore'])->name('customer.restore');
 
 Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');

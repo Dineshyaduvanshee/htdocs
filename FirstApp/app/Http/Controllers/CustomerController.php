@@ -64,6 +64,16 @@ class CustomerController extends Controller
        print_r($customer);
        return redirect('customer/view');      
     }
+    public function forceDelete($id){
+        // $customer = customer::find($id)->delete();
+        $customer = customer::withTrashed()->find($id);
+       if(!is_null($customer)){
+        $customer->forceDelete();
+       }
+       echo "<pre>"; 
+       print_r($customer);
+       return redirect()->back();   
+    }
 
     public function restore($id){
         // $customer = customer::find($id)->delete();
