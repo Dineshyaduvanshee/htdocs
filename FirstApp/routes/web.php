@@ -83,13 +83,15 @@ Route::post('/register', [RegistrationController::class, 'register']);
 Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create'); 
 Route::post('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+Route::get('/customer/restore/{id}', [CustomerController::class, 'restore'])->name('customer.restore');
 
 Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
 Route::get('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
 Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
 Route::get('/customer', [CustomerController::class, 'index']);
 Route::get('/customer/view', [CustomerController::class, 'view']);
-Route::get('/customer/trash', [CustomerController::class, 'view']);
+Route::get('/customer-trash', [CustomerController::class, 'trash']);
+Route::get('/customer/store', [CustomerController::class, 'store']);
 Route::post('/customer/store', [CustomerController::class, 'store']);
 Route::post('/customer', [CustomerController::class, 'store'])->name('customer.store');
 

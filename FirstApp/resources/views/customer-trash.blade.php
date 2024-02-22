@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     
     <a class="navbar-brand" href="C:\Users\Shree\OneDrive\Desktop\Indicosmic-logo.png">info@indicosmic.com</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,21 +41,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Customer Trashed </title>
+    <title>Customer Trash </title>
 </head>
 <body>
 
 
-    <div class="container mt-5">
-    <table class="table">
-        <!-- <pre>
-            {{print_r($customer)}}
-        </pre> -->
+  <table class="table mx-auto d-block mt-5">
+       
       <thead>
         <tr>
             <td>
                 <a href="{{route('customer.create')}}">
-                    <button class="btn btn-primary">create</button>
+                    <button class="btn btn-success">add</button>
+                </a>
+            </td>
+            <td>
+                <a href="{{url('customer/view')}}">
+                    <button class="btn btn-primary">Customer View</button>
                 </a>
             </td>
     </tr>
@@ -116,7 +118,7 @@
     </a>
 </td>
         <td>
-           <a href="{{ route('customer.edit', ['id' => $cr->id]) }}"> <button class="btn btn-primary">Restore</button></a>
+           <a href="{{ route('customer.restore', ['id' => $cr->id]) }}"> <button class="btn btn-primary">Restore</button></a>
         </td>
     </tr>
 
@@ -137,31 +139,6 @@
 
       </tbody>
     </table>
-  </div>
-
-<!-- <div class="container">
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-  </table>
-</div> -->
 
 </body>
 </html>

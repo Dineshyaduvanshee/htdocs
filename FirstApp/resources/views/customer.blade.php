@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">info@indicosmic.com</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
     <!-- {{url('/customer')}}/store
 {{url('/customer/store')}}  -->
 
-        <form action="{{$url}}" method="post" class="col-md-6 offset-md-3 bg-white p-4">
+        <form action="{{$url}}/store" method="post" class="col-md-6 offset-md-3 bg-white p-4">
             @csrf
            
             <h2 class="text-center mb-4">{{$title}}</h2>

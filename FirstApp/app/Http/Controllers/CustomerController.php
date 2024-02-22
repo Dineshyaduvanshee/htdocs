@@ -20,7 +20,9 @@ class CustomerController extends Controller
         
         $customer = new Customer;
         $customer->name = $request['name'];
-        $customer->email = $request['email'];
+       // $customer->email = $request['email'];
+        $customer->email = $request->input('email');
+
         $customer->gender = $request['gender'];
         $customer->address = $request['address'];
         $customer->state = $request['state'];
@@ -60,10 +62,19 @@ class CustomerController extends Controller
        }
        echo "<pre>"; 
        print_r($customer);
-       return redirect('customer/view')->with($data);
-      // return view('customer/view')->with($data);
-      
+       return redirect('customer/view');      
     }
+
+    public function restore($id){
+        // $customer = customer::find($id)->delete();
+          $customer = customer::withTrashed()->find($id);
+         if(!is_null($customer)){
+          $customer->restore();
+         }
+         echo "<pre>"; 
+         print_r($customer);
+         return redirect('customer/view');      
+      }
     // public function delete($id) {
     //     $customer = Customer::find($id);
     
@@ -103,10 +114,19 @@ class CustomerController extends Controller
         //     return view('customer/view')->with($data);
         //    }
     }
+
+
+    // public function trash(){
+    //     $customer = customer::onlyTrashed()->get();
+    //     return view('customer-trash')->with($customer);
+    // }
+
     public function trash(){
-        $customer = customer::onlyTrashed()->get();
-        return view('customer-trash')->with($customer);
+        $customer = Customer::onlyTrashed()->get();
+        return view('customer-trash')->with(['customer' => $customer]);
     }
+    
+
     public function edit($id){
         $customer = Customer::find($id);
         
@@ -117,7 +137,7 @@ class CustomerController extends Controller
                 $url = url('/customer/update')."/".$id;
                 $title="update Customer";
                 $data = compact('customer','url','title');
-                return view('customer')->with($data);
+                return view('customer/view')->with($data);
             }
         
         
