@@ -35,6 +35,7 @@ public function up()
         $table->string('email', 100);
         $table->enum('gender', ["M", "F", "O"]);
         $table->text('address');
+        $table->string('country', 255); // Change the length according to your needs
         $table->date('dob');
         $table->string('password');
         $table->boolean('status')->default(1);

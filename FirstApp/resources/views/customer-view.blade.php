@@ -38,33 +38,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-    </style>
+   
     <title>Customer view </title>
 </head>
 <body>
+<!-- table mx-auto d-block mt-5 -->
+<table class="table mx-auto d-block mt-5 table-responsive">
 
-<table class="table mx-auto d-block mt-5">
             <thead>
+             
                 <tr>
-                    <td>
-                        <a href="{{ route('customer.create') }}">
-                            <button class="btn btn-primary">Create</button>
-                        </a>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                    <!-- <td colspan="1"><input type="text"></td>                  -->
+                    <td colspan="1">
+                        <div class="input-group-append">
+                        <!-- <a href="{{ url('/customer/view') }}"> <input type="text" class="form-control" placeholder="Search..."  > </a>
+                             -->
+                                <!-- <div class="input-group-append">
+                                  
+                                   <button class="btn btn-outline-secondary" type="button"> 
+                                   <i class="fas fa-search">Search</i>
+                                    </button>
+                                </div>
+                        </div> -->
+                        <input type="search" id="" name="search" class="form-control" placeholder="Search...">
+                                <button class="btn btn-outline-secondary" type="button" >
+                                <i class="fas fa-search">Search</i>
+                                </button>
+
                     </td>
-                    <td>
-                        <a href="{{ url('/customer-trash') }}">
-                            <button class="btn btn-danger">Go to Trash</button>
+
+
+                  
+
+
+
+                    <!-- <td>
+                        <a href="{{ url('/customer-trash') }}"><button class="btn btn-success">Search</button></a> 
+                    </td> -->
+                    <td> 
+                        <a href="{{ route('customer.create') }}"><button class="btn btn-primary">Create</button></a>
+                    </td>
+                   
+                    <td><a href="{{ url('/customer-trash') }}">
+                            <button class="btn btn-danger" style="align:left;">Go to Trash</button>
                         </a>
                     </td>
                 </tr>
@@ -80,6 +109,7 @@
                     <th scope="col">Password</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
+                    <th scope="col">Restore</th>
                 </tr>
             </thead>
             <tbody>
@@ -127,7 +157,6 @@
                 @endforeach
             </tbody>
         </table>
-
 </body>
 
 </html>

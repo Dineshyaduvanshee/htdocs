@@ -71,6 +71,8 @@ use App\Models\Customer;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -90,7 +92,7 @@ Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('cu
 Route::get('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
 Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
 Route::get('/customer', [CustomerController::class, 'index']);
-Route::get('/customer/view', [CustomerController::class, 'view']);
+Route::get('/customer/view', [CustomerController::class, 'view'])->name('customer.view');
 Route::get('/customer-trash', [CustomerController::class, 'trash']);
 Route::get('/customer/store', [CustomerController::class, 'store']);
 Route::post('/customer/store', [CustomerController::class, 'store']);

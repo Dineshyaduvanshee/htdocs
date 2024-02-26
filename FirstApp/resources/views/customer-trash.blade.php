@@ -41,6 +41,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
+
     <title>Customer Trash </title>
 </head>
 <body>
@@ -50,6 +52,29 @@
        
       <thead>
         <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                              
+                    <td colspan="1">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                
+                                        <i class="fas fa-search"></i>
+
+                                        
+                                    </button>
+                                </div>
+                        </div>
+                    </td>
+
             <td>
                 <a href="{{route('customer.create')}}">
                     <button class="btn btn-success">add</button>

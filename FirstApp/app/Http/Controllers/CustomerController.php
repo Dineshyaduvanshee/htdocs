@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+
+
 class CustomerController extends Controller
 {
     public function index(){
@@ -36,14 +38,22 @@ class CustomerController extends Controller
         print_r($request->all());
         return redirect()->route('customer/view')->with('success', 'Customer created successfully.'); 
     }
-    public function view(){
-        $customer = Customer :: all();
+    public function view(Request $request){
+       // $customer = Customer :: all();
+        $search = $request['search'] ?? "";
+        if($search != ''){
+            $customer = customer::where('name','LIKE',$search)->get();
+        }
+        else{
+            $customer = Customer :: all();
+        }
         // echo "<pre>"; 
         // print_r($customer);
         // echo "</spre>"; 
         // die;
         $data = compact('customer');
         return view('customer-view')->with($data);
+
     }
     public function create()
     {
